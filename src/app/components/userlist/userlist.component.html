@@ -1,0 +1,24 @@
+<nz-table #basicTable [nzData]="listOfData">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>State</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{ data.id }}</td>
+        <td>{{ data.email }}</td>
+        <td>{{ data.address }}</td>
+        <td>
+            <nz-switch [(ngModel)]="data.logicDelete" nzCheckedChildren="启" nzUnCheckedChildren="禁"></nz-switch>
+        </td>
+        <td>
+          <a>修改</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
